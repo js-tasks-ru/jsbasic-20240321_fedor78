@@ -14,7 +14,7 @@ function initCarousel() {
   arrowR.addEventListener("click", () => {
     distance -= slideWidth;
     carusel.style.transform = `translateX(${distance}px)`;
-    distance == -1500
+    distance == -slideWidth * 3
       ? (arrowR.style.display = "none")
       : (arrowR.style.display = "");
   });
