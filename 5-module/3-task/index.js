@@ -5,24 +5,17 @@ function initCarousel() {
   const slideWidth = carusel.offsetWidth;
   let distance = 0;
 
-  arrowL.addEventListener("click", function () {
+  distance == 0 ? (arrowL.style.display = "none") : (arrowL.style.display = "");
+
+  arrowL.addEventListener("click", () => {
     distance += slideWidth;
     carusel.style.transform = `translateX(${distance}px)`;
   });
-  arrowR.addEventListener("click", function () {
+  arrowR.addEventListener("click", () => {
     distance -= slideWidth;
     carusel.style.transform = `translateX(${distance}px)`;
+    distance == -1500
+      ? (arrowR.style.display = "none")
+      : (arrowR.style.display = "");
   });
-
-  if (distance == 0) {
-    arrowL.style.display = "none";
-  } else {
-    arrowL.style.display = "";
-  }
-
-  if (distance == -slideWidth * 3) {
-    arrowR.style.display = "";
-  } else {
-    arrowR.style.display = "none";
-  }
 }
